@@ -5,17 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visabae Blog</title>
   <style>
+    :root {
+      --primary: #00509e;
+      --accent: #00bfa6;
+      --dark: #002244;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
     }
     header {
-      background: linear-gradient(to right, #007991, #78ffd6);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
       padding: 30px;
       text-align: center;
     }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      background: var(--dark);
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s ease;
+    }
+    nav a:hover { background: var(--primary); }
+    nav .home-link { background: var(--primary); }
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -41,6 +64,15 @@
     <h1>Visabae Blog</h1>
     <p>Latest insights and updates on European visa processes</p>
   </header>
+
+  <nav>
+    <a href="index.html" class="home-link">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#features">Why Us?</a>
+    <a href="index.html#testimonials">Testimonials</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
 
   <div class="container">
     <div class="post">
