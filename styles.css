@@ -1,6 +1,19 @@
+/*
+  Updated stylesheet for the Visabae landing page.
+
+  This file builds upon the original styles by introducing
+  definitions for call‑to‑action buttons and links as well as
+  responsive layouts for the new Articles and Vacancies sections.
+  Colours and typography have been retained for a professional
+  appearance.  To use this stylesheet, save it as `styles.css` in
+  your repository and commit the changes along with the updated
+  `index.html`.
+*/
+
 :root {
   --primary: #0066cc;
   --secondary: #00b4d8;
+  --accent: #009688;
   --dark: #003366;
   --light: #f4f6f8;
 }
@@ -12,7 +25,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: var(--light);
   color: #333;
   line-height: 1.6;
@@ -34,7 +47,7 @@ nav {
 
 nav a {
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   text-decoration: none;
   display: block;
   transition: background 0.3s;
@@ -45,33 +58,42 @@ nav a:hover {
 }
 
 .hero {
-  background: url("https://images.unsplash.com/photo-1510751007277-36932aac9ebd")
-    no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 32, 64, 0.6), rgba(0, 32, 64, 0.6)),
+    url('https://images.unsplash.com/photo-1510751007277-36932aac9ebd') no-repeat
+      center center/cover;
   color: white;
-  padding: 5rem 1rem;
+  padding: 6rem 1rem;
   text-align: center;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.hero h1,
-.hero p {
-  position: relative;
-  z-index: 1;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: var(--secondary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--primary);
+}
+
+.cta-link {
+  color: var(--secondary);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.cta-link:hover {
+  color: var(--primary);
 }
 
 .section {
@@ -88,7 +110,9 @@ nav a:hover {
 
 .services,
 .features,
-.testimonials {
+.testimonials,
+.articles-list,
+.vacancies-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -100,9 +124,7 @@ nav a:hover {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   border-top: 4px solid var(--secondary);
 }
 
@@ -124,19 +146,13 @@ footer {
   padding: 1.5rem 1rem;
 }
 
-.contact,
-form {
+.contact form {
   text-align: center;
   margin-top: 2rem;
 }
 
-.contact p,
-form p {
-  margin-bottom: 0.5rem;
-}
-
-input,
-textarea {
+.contact input,
+.contact textarea {
   width: 80%;
   padding: 10px;
   margin: 10px auto;
@@ -145,7 +161,7 @@ textarea {
   display: block;
 }
 
-button {
+.contact button {
   padding: 10px 20px;
   background: var(--primary);
   color: white;
@@ -155,7 +171,7 @@ button {
   transition: background 0.3s;
 }
 
-button:hover {
+.contact button:hover {
   background: var(--dark);
 }
 
@@ -176,4 +192,14 @@ button:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   z-index: 1000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  nav a {
+    padding: 0.75rem 1rem;
+  }
 }
